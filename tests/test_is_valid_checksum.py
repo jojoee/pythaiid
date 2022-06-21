@@ -1,0 +1,50 @@
+import unittest
+from pythaiid import is_valid_checksum
+
+
+class TestIsValidChecksum(unittest.TestCase):
+
+    def test_valid_checksum(self):
+        self.assertEqual(is_valid_checksum('3648905117162'), True)
+        self.assertEqual(is_valid_checksum('1234567891020'), True)
+        self.assertEqual(is_valid_checksum('3648905117090'), True)
+        self.assertEqual(is_valid_checksum('1234567891011'), True)
+        self.assertEqual(is_valid_checksum('3648905117031'), True)
+        self.assertEqual(is_valid_checksum('1234567891062'), True)
+        self.assertEqual(is_valid_checksum('3648905117022'), True)
+        self.assertEqual(is_valid_checksum('1234567891003'), True)
+        self.assertEqual(is_valid_checksum('3648905117073'), True)
+        self.assertEqual(is_valid_checksum('1234567891054'), True)
+        self.assertEqual(is_valid_checksum('3648905117014'), True)
+        self.assertEqual(is_valid_checksum('1234567891305'), True)
+        self.assertEqual(is_valid_checksum('3648905117065'), True)
+        self.assertEqual(is_valid_checksum('1234567891046'), True)
+        self.assertEqual(is_valid_checksum('3648905117006'), True)
+        self.assertEqual(is_valid_checksum('1234567891097'), True)
+        self.assertEqual(is_valid_checksum('3648905117707'), True)
+        self.assertEqual(is_valid_checksum('1234567891038'), True)
+        self.assertEqual(is_valid_checksum('3648905117308'), True)
+        self.assertEqual(is_valid_checksum('1234567891089'), True)
+        self.assertEqual(is_valid_checksum('3648905117049'), True)
+
+    def test_invalid_checksum(self):
+        self.assertEqual(is_valid_checksum('1234567891021'), False)
+        self.assertEqual(is_valid_checksum('3648905117092'), False)
+        self.assertEqual(is_valid_checksum('1234567891012'), False)
+        self.assertEqual(is_valid_checksum('3648905117033'), False)
+        self.assertEqual(is_valid_checksum('1234567891063'), False)
+        self.assertEqual(is_valid_checksum('3648905117024'), False)
+        self.assertEqual(is_valid_checksum('1234567891004'), False)
+        self.assertEqual(is_valid_checksum('3648905117075'), False)
+        self.assertEqual(is_valid_checksum('1234567891055'), False)
+        self.assertEqual(is_valid_checksum('3648905117016'), False)
+        self.assertEqual(is_valid_checksum('1234567891306'), False)
+        self.assertEqual(is_valid_checksum('3648905117067'), False)
+        self.assertEqual(is_valid_checksum('1234567891047'), False)
+        self.assertEqual(is_valid_checksum('3648905117008'), False)
+        self.assertEqual(is_valid_checksum('1234567891098'), False)
+        self.assertEqual(is_valid_checksum('3648905117709'), False)
+        self.assertEqual(is_valid_checksum('1234567891039'), False)
+        self.assertEqual(is_valid_checksum('3648905117300'), False)
+        self.assertEqual(is_valid_checksum('1234567891080'), False)
+        self.assertEqual(is_valid_checksum('3648905117041'), False)
